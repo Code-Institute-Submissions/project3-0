@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  </head>
+  <body>
+    <h1>&nbsp;How to use install Magento </h1>
+    To install Magento you can download an open source version from the
+    download section of the <a
+      href="https://magento.com/tech-resources/download">website</a>.<br>
+    The application is also available on many hosting control Panel's
+    and this process usually creates the relevant MySQL database for
+    you.<br>
+    <br>
+    I installed&nbsp;
+    Magento at :<a href="https://ciaranquinlan.com">
+      https://ciaranquinlan.com</a> <br>
+    The Administrative URL : <a
+      href="https://ciaranquinlan.com/index.php/admincjq">https://ciaranquinlan.com/index.php/admincjq</a>
+    <br>
+    <br>
+    In order to use Magento for the project I needed to do a few tasks
+    to administer Magento<br>
+    <ol>
+      <li><b>Enable SSH access.</b><br>
+        To do a lot of tasks its easier if you can log into the Magento
+        server and execute shell commands. <br>
+        The details of <a href="ssh.html">how i went about setting up
+          ssh is here.</a><br>
+      </li>
+      <li><b>Magento CLI</b><br>
+        I need to learn some commands to perform admin and maintenance
+        tasks on the Magento app and DB</li>
+      <li><b>composer</b><br>
+        Composer is a tool for dependency management in PHP. It allows
+        you to declare the libraries your project depends on and it will
+        manage (install/update) them for you.<br>
+        Magento uses composer to manage installs and upgrades. You need
+        to add you Magento credentials from your magento marketplace
+        account to use composer.
+        <br>
+        Access the keys under products and copy the keys, you need to
+        use the private and public keys. With these you can install from
+        the Magento repo's
+        <pre>Public Key: 96f2ea65b1a9dab3812b464730d48e35 
+Private Key: 0ae25fe32b01b1fa18ad5bb09f57052f 
+</pre>
+      </li>
+      <li><b>Enable backups</b> <br>
+        to ensure that I could roll back the system if I had problems. I
+        needed to use the cli to enable backuos then i could use the
+        system backup tool<br>
+        <pre>/usr/local/php71/bin/php-cli bin/magento config:set system/backup/functionality_enabled 1 </pre>
+      </li>
+      <li><b>Flush cashe
+        </b><br>
+        /usr/local/php71/bin/php-cli bin/magento cache:flush <br>
+      </li>
+      <li><b>Set </b><b><a
+href="https://devdocs.magento.com/guides/v2.3/install-gde/prereq/file-system-perms.html">ownership
+            and permissions </a></b><b>for a one-user system:.</b><br>
+        To set permissions before you install the Magento software run
+        these commands<br>
+        <magento_root>find var generated vendor pub/static pub/media
+          app/etc -type f -exec chmod u+w {} + <br>
+          find var generated vendor pub/static pub/media app/etc -type d
+          -exec chmod u+w {} + chmod u+x bin/magento <br>
+        </magento_root></li>
+      <li><magento_root><b>Set the Magento mode to <a
+href="https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-mode.html">developer</a></b><br>
+          First check the mode
+        </magento_root><magento_root><br>
+        </magento_root>
+        <pre><magento_root>/usr/local/php71/bin/php-cli bin/magento deploy:mode:show</magento_root><magento_root></magento_root><magento_root></magento_root><magento_root></magento_root></pre>
+        <pre><magento_root>/usr/local/php71/bin/php-cli bin/magento deploy:mode:set</magento_root></pre>
+        <magento_root></magento_root></li>
+      <li><magento_root><b>Install sample data</b><br>
+          /usr/local/php71/bin/php-cli bin/magento sampledata:deploy
+        </magento_root></li>
+    </ol>
+  </body>
+</html>

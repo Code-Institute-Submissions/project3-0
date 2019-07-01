@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  </head>
+  <body>
+    <h2>How to use the Magento command-line interface (CLI)
+    </h2>
+    The Magento CLI enables you to run and automate common installation
+    and configuration tasks from the command line. <br>
+    Magento tasks are executed by shell commands with /bin/magento.<br>
+    <magento2_root><br>
+      After install you need to set the permission on the Magento CLI.</magento2_root><br>
+    <pre><magento2_root>chmod 744 /bin/magento </magento2_root></pre>
+    <pre><magento2_root></magento2_root></pre>
+    <magento2_root>Then ensure you are using the correct version of php
+      in cli mode, this is the command.<br>
+    </magento2_root><magento2_root>
+    </magento2_root><magento2_root></magento2_root>
+    <pre><magento2_root>/usr/local/php71/bin/php-cli bin/magento
+</magento2_root></pre>
+    <pre><magento2_root></magento2_root></pre>
+    <magento2_root>Other commands that need to be used are to flush the
+      cache:<br>
+    </magento2_root>
+    <pre><magento2_root>/usr/local/php71/bin/php-cli bin/magento cache:flush 
+</magento2_root></pre>
+    <pre><magento2_root></magento2_root></pre>
+    <magento2_root><br>
+      the full list of commands see below.
+      <br>
+      <br>
+      To get the javscript demo working I needed to run these command
+      <br>
+    </magento2_root><br>
+    <pre><magento2_root>/usr/local/php71/bin/php-cli bin/magento setup:upgrade
+</magento2_root></pre>
+    <pre><magento2_root>bin/magento setup:upgrade
+</magento2_root></pre>
+    <pre><magento2_root>bin/magento cache:clean
+</magento2_root></pre>
+    <pre><magento2_root>bin/magento indexer:reindex
+
+
+</magento2_root></pre>
+    <magento2_root><br>
+      <br>
+      also see <a
+href="https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-subcommands.html">https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-subcommands.html
+        <br>
+      </a><br>
+      <br>
+    </magento2_root>
+  </body>
+</html>

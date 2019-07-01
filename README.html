@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  </head>
+  <body>
+    <h1><font color="#990000">Ciaran Quinlan - Project 2 - API project
+      </font></h1>
+    <p>For the second project I have chosen to do a sample application
+      using the Magento ecommerce API. I have chosen this API because I
+      am somewhat familiar with the application but I have never used
+      its api.<br>
+      I may work with this in the future and I want to investigate
+      further how to use this API.<br>
+    </p>
+    <h2>Magento Ecommerce system</h2>
+    <p><b>Magento</b> is an <a
+        href="https://en.wikipedia.org/wiki/Open-source_software"
+        title="Open-source software">open-source</a> and commercial <a
+href="https://en.wikipedia.org/w/index.php?title=E-commerce_platform&amp;action=edit&amp;redlink=1"
+        class="new" title="E-commerce platform (page does not exist)">e-commerce
+        platform</a> written in <a
+        href="https://en.wikipedia.org/wiki/PHP" title="PHP">PHP</a>. </p>
+    <p>Magento uses the <a href="https://en.wikipedia.org/wiki/MySQL"
+        title="MySQL">MySQL</a> or MariaDB relational database
+      management system, the <a
+        href="https://en.wikipedia.org/wiki/PHP" title="PHP">PHP</a>
+      programming language, and elements of the <a
+        href="https://en.wikipedia.org/wiki/Zend_Framework" title="Zend
+        Framework">Zend Framework</a>.</p>
+    <p>It applies the conventions of <a
+        href="https://en.wikipedia.org/wiki/Object-oriented_programming"
+        title="Object-oriented programming">object-oriented programming</a>
+      and <a
+href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"
+        title="Model–view–controller">model–view–controller</a>
+      architecture. Magento also uses the <a
+href="https://en.wikipedia.org/wiki/Entity%E2%80%93attribute%E2%80%93value_model"
+        title="Entity–attribute–value model">entity–attribute–value
+        model</a> to store data.<sup> </sup>On top of that, Magento 2
+      introduced the <a
+        href="https://en.wikipedia.org/wiki/Model-View-ViewModel"
+        class="mw-redirect" title="Model-View-ViewModel">Model-View-ViewModel</a>
+      pattern to its front-end code using the <a
+        href="https://en.wikipedia.org/wiki/JavaScript"
+        title="JavaScript">JavaScript</a> library <a
+        href="https://en.wikipedia.org/wiki/Knockout.js"
+        class="mw-redirect" title="Knockout.js">Knockout.js</a>.</p>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <p>The current opensourtce version is Magento 2.3.1 and this is the
+      version i will be working with. Sometimes I will refer to it
+      simply as M2<br>
+    </p>
+    <h2>Magento API description and summary
+    </h2>
+    <p>The Magento web API framework provides integrators and developers
+      the means to use web services to communicate with the Magento
+      ecommerce system. </p>
+    <p>The Magento API support both REST (Representational State
+      Transfer) and SOAP (Simple Object Access Protocol). for my project
+      I will use the REST API but the Magento 2 web API coverage is the
+      same for both REST and SOAP.
+      The documentation for the Mahento API is locatd here
+      https://devdocs.magento.com/guides/v2.3/get-started/bk-get-started-api.html
+
+
+
+
+The
+      learning outcomes for this section of the course include: being
+      able to access external resources, work with external data,
+      deserialize JSON data, and create data tables with pagination.</p>
+    <p><br>
+      As i researched the API i aslo realised that authentication is
+      required and also the use of other libraries like require JS </p>
+    <h2>Getting the environment setup.</h2>
+    <p>In order to start the project I had to install the Magento
+      application on a server (it is too complicated to install this
+      locally).</p>
+    <ol>
+      <li> The details of installing are in the link <a
+          href="docs/Magento-Install.html">Magento Install details.</a><br>
+        I installed Magento in the root directory of my domain under a
+        https url.<br>
+        I installed&nbsp; Magento at :<a
+          href="https://ciaranquinlan.com"> https://ciaranquinlan.com</a></li>
+      <li>The application comes with a default theme and i installed
+        this so i can get started quickly.</li>
+      <li>I need shell access to the Magento file system to do admin
+        tasks. I had to enable this on my hosting account and<br>
+        how i <a href="docs/ssh.html">setup ssh </a>is detailed here.</li>
+      <li>I created a local directory so I could git updates as the
+        project progressed, only files i worked on were in my git repo.<br>
+        TYhese are all in a directory on the server called project2.<br>
+      </li>
+      <li>To use and configure M2 you need to use the Magento command
+        line interface on the server. <br>
+        This <a href="docs/Magento-Commands.html">document details how
+          I set myself up to use the Magento CLI.</a></li>
+    </ol>
+    <h3>Sample data.</h3>
+    <p>I installed a sample set of data based on a yoga store with the
+      Luma theme.<br>
+      I created a number of customers and a number of orders so i could
+      test the system<br>
+    </p>
+    <br>
+    <h2>Project outline</h2>
+    <p>The project will create a Html/Javascript/JQuery file that will
+      connect to the Magento 2 API on my domain.<br>
+      The page will return product, customer or order data based on the
+      requests made from the user.</p>
+    <h3>Project phases.</h3>
+    The first objective is to get the connection working to the M2 API.<br>
+    A basic html file will be created based on <a
+      href="wireframes/MagentoAPIPage.png">this mockup </a>to test the
+    connection.<br>
+    The html file will have three sections where the user will be able
+    to enter the search string and see the returned data<br>
+    <blockquote>
+      <ol>
+        <li>order id&nbsp; - to return order
+          information&nbsp;&nbsp;&nbsp; </li>
+        <li>product type - to return matching product information</li>
+        <li>customer name&nbsp; to return matching customer informatio</li>
+      </ol>
+    </blockquote>
+    Simple styling of the data will be done initially and then the code
+    will be integrated into a bootstrap template.<br>
+    The page should react when the customer enters the order id ,
+    product or customer info and&nbsp; displays some relevant data<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3>Selecting a Theme.</h3>
+    I choose the Regna bootstrap theme and i will use this to display
+    the data.<br>
+    &nbsp;<br>
+    <br>
+    <br>
+    <br>
+    <h2>Credits</h2>
+    <br>
+    Magento.com<br>
+    Magento wiki https://en.wikipedia.org/wiki/Magento<br>
+    bootstrap template.<br>
+    <br>
+    <br>
+  </body>
+</html>

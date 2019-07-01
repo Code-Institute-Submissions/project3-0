@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  </head>
+  <body>
+    <h2>Create keys for ssh into Magento server
+    </h2>
+    <br>
+    In order to execute commands in Magento I have to log in to my
+    Magento Server via SSH.<br>
+    To do this I needed to setup key-based SSH authentication instead of
+    plain username &amp; password. <br>
+    <br>
+    I generated an SSH key pair (public and a private key) and copied
+    the private key into a text file on my computer.
+    <br>
+    <br>
+    I loaded the private key into the SSH-agent using your Mac Terminal
+    using the ssh-add command:
+    <br>
+    <pre>ssh-add ./private_key
+</pre>
+    I&nbsp; had to chmod the file to 400 to get it to add. <br>
+    Then i was able to login to the magento server and go directly to
+    the magento home directiry with the following command in terminal
+    <br>
+    <br>
+    <pre>ssh -t kerryfis@77.104.160.142   -p 18765 'cd /home/kerryfis/public_html/ciaranquinlan.com;bash'
+
+
+
+</pre>
+  </body>
+</html>

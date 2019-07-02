@@ -1,6 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
 
     <meta http-equiv="content-type" content="text/html; charset=windows-1252">
   </head>
@@ -15,40 +14,19 @@
       further how to use this API.<br>
     </p>
     <h2>Magento Ecommerce system</h2>
-    <p><b>Magento</b> is an <a
-        href="https://en.wikipedia.org/wiki/Open-source_software"
-        title="Open-source software">open-source</a> and commercial <a
-href="https://en.wikipedia.org/w/index.php?title=E-commerce_platform&amp;action=edit&amp;redlink=1"
-        class="new" title="E-commerce platform (page does not exist)">e-commerce
-        platform</a> written in <a
-        href="https://en.wikipedia.org/wiki/PHP" title="PHP">PHP</a>. </p>
-    <p>Magento uses the <a href="https://en.wikipedia.org/wiki/MySQL"
-        title="MySQL">MySQL</a> or MariaDB relational database
-      management system, the <a
-        href="https://en.wikipedia.org/wiki/PHP" title="PHP">PHP</a>
-      programming language, and elements of the <a
-        href="https://en.wikipedia.org/wiki/Zend_Framework" title="Zend
+    <p><b>Magento</b> is an <a href="https://en.wikipedia.org/wiki/Open-source_software" title="Open-source software">open-source</a> and commercial <a href="https://en.wikipedia.org/w/index.php?title=E-commerce_platform&amp;action=edit&amp;redlink=1" class="new" title="E-commerce platform (page does not exist)">e-commerce
+        platform</a> written in <a href="https://en.wikipedia.org/wiki/PHP" title="PHP">PHP</a>. </p>
+    <p>Magento uses the <a href="https://en.wikipedia.org/wiki/MySQL" title="MySQL">MySQL</a> or MariaDB relational database
+      management system, the <a href="https://en.wikipedia.org/wiki/PHP" title="PHP">PHP</a>
+      programming language, and elements of the <a href="https://en.wikipedia.org/wiki/Zend_Framework" title="Zend
         Framework">Zend Framework</a>.</p>
-    <p>It applies the conventions of <a
-        href="https://en.wikipedia.org/wiki/Object-oriented_programming"
-        title="Object-oriented programming">object-oriented programming</a>
-      and <a
-href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller"
-        title="Model–view–controller">model–view–controller</a>
-      architecture. Magento also uses the <a
-href="https://en.wikipedia.org/wiki/Entity%E2%80%93attribute%E2%80%93value_model"
-        title="Entity–attribute–value model">entity–attribute–value
+    <p>It applies the conventions of <a href="https://en.wikipedia.org/wiki/Object-oriented_programming" title="Object-oriented programming">object-oriented programming</a>
+      and <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" title="Model–view–controller">model–view–controller</a>
+      architecture. Magento also uses the <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93attribute%E2%80%93value_model" title="Entity–attribute–value model">entity–attribute–value
         model</a> to store data.<sup> </sup>On top of that, Magento 2
-      introduced the <a
-        href="https://en.wikipedia.org/wiki/Model-View-ViewModel"
-        class="mw-redirect" title="Model-View-ViewModel">Model-View-ViewModel</a>
-      pattern to its front-end code using the <a
-        href="https://en.wikipedia.org/wiki/JavaScript"
-        title="JavaScript">JavaScript</a> library <a
-        href="https://en.wikipedia.org/wiki/Knockout.js"
-        class="mw-redirect" title="Knockout.js">Knockout.js</a>.</p>
-    <meta http-equiv="content-type" content="text/html;
-      charset=windows-1252">
+      introduced the <a href="https://en.wikipedia.org/wiki/Model-View-ViewModel" class="mw-redirect" title="Model-View-ViewModel">Model-View-ViewModel</a>
+      pattern to its front-end code using the <a href="https://en.wikipedia.org/wiki/JavaScript" title="JavaScript">JavaScript</a> library <a href="https://en.wikipedia.org/wiki/Knockout.js" class="mw-redirect" title="Knockout.js">Knockout.js</a>.</p>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
     <p>The current opensourtce version is Magento 2.3.1 and this is the
       version i will be working with. Sometimes I will refer to it
       simply as M2<br>
@@ -80,12 +58,10 @@ The
       application on a server (it is too complicated to install this
       locally).</p>
     <ol>
-      <li> The details of installing are in the link <a
-          href="docs/Magento-Install.html">Magento Install details.</a><br>
+      <li> The details of installing are in the link <a href="docs/Magento-Install.html">Magento Install details.</a><br>
         I installed Magento in the root directory of my domain under a
         https url.<br>
-        I installed&nbsp; Magento at :<a
-          href="https://ciaranquinlan.com"> https://ciaranquinlan.com</a></li>
+        I installed&nbsp; Magento at :<a href="https://ciaranquinlan.com"> https://ciaranquinlan.com</a></li>
       <li>The application comes with a default theme and i installed
         this so i can get started quickly.</li>
       <li>I need shell access to the Magento file system to do admin
@@ -113,9 +89,27 @@ The
       The page will return product, customer or order data based on the
       requests made from the user.</p>
     <h3>Project phases.</h3>
-    The first objective is to get the connection working to the M2 API.<br>
-    A basic html file will be created based on <a
-      href="wireframes/MagentoAPIPage.png">this mockup </a>to test the
+    <br>
+1. I wanted to get started with using an api to welcome the user with their county code and currency.<br>
+I found a number of apis that will return this data, I spewnt a lot of time getting them working outside of my localsetup<br>
+and it turned out to be https errors. the ciaranquinlan.com server is https only and these api's only work on http.<br>
+<br>
+However they work locally so these are the examples.<br>
+1. Get my ip<br>
+<br>
+2. return my country<br>
+<br>
+3.  return my country<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+The first objective is to get the connection working to the M2 API.<br><br>
+<br>
+<br>
+A basic html file will be created based on <a href="wireframes/MagentoAPIPage.png">this mockup </a>to test the
     connection.<br>
     The html file will have three sections where the user will be able
     to enter the search string and see the returned data<br>
@@ -130,7 +124,12 @@ The
     Simple styling of the data will be done initially and then the code
     will be integrated into a bootstrap template.<br>
     The page should react when the customer enters the order id ,
-    product or customer info and&nbsp; displays some relevant data<br>
+    product or customer info and&nbsp; displays some relevant data.<br>
+<br>
+<br>
+I also wanty to check where the user is coming from to identify their county and currency.<br>
+i found some api calls that can do this and i will retrn this sto the browser.<br>
+<br>
     <br>
     <br>
     <br>
@@ -152,5 +151,6 @@ The
     bootstrap template.<br>
     <br>
     <br>
-  </body>
-</html>
+  
+
+</body></html>

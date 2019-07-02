@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script
+    src="http://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+   
+  
+</head>
+<body>
+<!-- This works locally as http -->
+
+    
+<script>
+
+
+jQuery(document).ready(function($) {
+    jQuery.getScript('http://www.geoplugin.net/javascript.gp', function()
+{
+    var country = geoplugin_countryName();
+    var zone = geoplugin_region();
+    var district = geoplugin_city();
+    console.log("Your location is: " + country + ", " + zone + ", " + district);
+});
+});
+</script>
+
+<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+alert("Your location is: " + geoplugin_countryName() + ", " + geoplugin_region() + ", " + geoplugin_city());
+});
+</script>
+
+
+<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script language="Javascript">
+  document.write("Welcome to our visitors from "+geoplugin_city()+", "+geoplugin_countryName(),"<br />");
+  document.write("You can spend your "+geoplugin_currencyCode()+geoplugin_currencySymbol()+" at our store ","<br />");
+</script>
+
+
+<!-- /*--------------------------------detailed function list not necessarily to be included---------
+function geoplugin_city() { return 'Dobroyd Point';}
+function geoplugin_region() { return 'New South Wales';}
+function geoplugin_regionCode() { return '02';}
+function geoplugin_regionName() { return 'New South Wales';}
+function geoplugin_areaCode() { return '0';}
+function geoplugin_dmaCode() { return '0';}
+function geoplugin_countryCode() { return 'AU';}
+function geoplugin_countryName() { return 'Australia';}
+function geoplugin_continentCode() { return 'OC';}
+function geoplugin_latitude() { return '-33.873600';}
+function geoplugin_longitude() { return '151.144699';}
+function geoplugin_currencyCode() { return 'AUD';}
+function geoplugin_currencySymbol() { return '&amp;#36;';}
+function geoplugin_currencyConverter(amt, symbol) {
+    if (!amt) { return false; }
+    var converted = amt * 0.9587170632;
+    if (converted &lt;0) { return false; }
+    if (symbol === false) { return Math.round(converted * 100)/100; }
+    else { return '&amp;#36;'+(Math.round(converted * 100)/100);}
+    return false;
+} 
+*/ -->
+
+
+
+
+
+</body>
+</html>

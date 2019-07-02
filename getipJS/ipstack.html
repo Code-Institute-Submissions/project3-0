@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  
+</head>
+<body>
+  <!-- This is not working as my server is using only https -->
+ <script>
+    
+  // set endpoint and your access key
+var ip = '134.201.250.155';
+var access_key = 'a88fc0888e1914d5238f553f1ea25997';
+
+// get the API result via jQuery.ajax
+$.ajax({
+    url: 'https://api.ipstack.com/' + ip + '?access_key=' + access_key,   
+// url:'https://api.ipstack.com/check?access_key=a88fc0888e1914d5238f553f1ea25997',
+  dataType: 'jsonp',
+    success: function(json) {
+
+        // output the "capital" object inside "location"
+        // alert(json.location.capital);
+        alert(json.country_name);
+        alert(json.city);
+        alert(json.location.country_flag_emoji);
+        
+    }
+});
+    </script>
+  
+  
+</body>
+</html>

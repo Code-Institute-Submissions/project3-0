@@ -84,35 +84,36 @@ The
     </p>
     <br>
     <h2>Project outline</h2>
-    <p>The project will create a Html/Javascript/JQuery file that will
-      connect to the Magento 2 API on my domain.<br>
-      The page will return product, customer or order data based on the
-      requests made from the user.</p>
+<p>I want to use a number of API calls or javascript function to write data to the browser. <br>
+</p>
+<ol>
+  <li>The page will find out where the customer id browsing from so location infocan be used for offers.</li>
+  <li>
+    The project will will
+      connect to the Magento 2 ecommerce API on my domain. Data from 
+Mageto like order, product or customer data can be displyed on the 
+screen.</li>
+  <li>They can query return product, customer or order data based on the
+      requests made from the user.<br>
+and see on a map where they can find our products.</li>
+  <li>Connect to a google map<br>
+  </li>
+</ol>
+<p><br>
+</p>
+
     <h3>Project phases.</h3>
     <br>
-1. I wanted to get started with using an api to welcome the user with their county code and currency.<br>
-I found a number of apis that will return this data, I spewnt a lot of time getting them working outside of my localsetup<br>
-and it turned out to be https errors. the ciaranquinlan.com server is https only and these api's only work on http.<br>
+1. I wanted to get started with using javascript calls and writing to 
+the browser so I will call an external URL to return&nbsp; location info
+ like city and region to identify the browser.<br>
+I found a number of apis that will return this data, I spent a lot of 
+time getting them working outside of my localsetup and it turned out to 
+be https errors. The ciaranquinlan.com server is https only and these 
+free api's only work on http. I settled on the most basic one and I got this working. <br>
 <br>
-However they work locally so these are the examples.<br>
-1. Get my ip<br>
-<br>
-2. return my country<br>
-<br>
-3.  return my country<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-The first objective is to get the connection working to the M2 API.<br><br>
-<br>
-<br>
-A basic html file will be created based on <a href="wireframes/MagentoAPIPage.png">this mockup </a>to test the
-    connection.<br>
-    The html file will have three sections where the user will be able
-    to enter the search string and see the returned data<br>
+2. The next objective is to get the connection working to the M2 API.<br><br>
+3.&nbsp; The user will have three sections where the user can enter the search string and see the returned data<br>
     <blockquote>
       <ol>
         <li>order id&nbsp; - to return order
@@ -120,100 +121,79 @@ A basic html file will be created based on <a href="wireframes/MagentoAPIPage.pn
         <li>product type - to return matching product information</li>
         <li>customer name&nbsp; to return matching customer informatio</li>
       </ol>
-    </blockquote>
-    Simple styling of the data will be done initially and then the code
-    will be integrated into a bootstrap template.<br>
-    The page should react when the customer enters the order id ,
-    product or customer info and&nbsp; displays some relevant data.<br>
+    </blockquote><br>
+<h3>Magento API Endpoints</h3>Magento uses enpoint in its REST api to 
+sliver back results, to get a required data set you must refer to the 
+appropriate endpoint.<br>
 <br>
+The Magento 2 SOAP and REST APIs are versioned, which means that there 
+are no guarantees that old API calls will work for future Magento 
+versions.<br>
 <br>
-I also wanty to check where the user is coming from to identify their county and currency.<br>
-i found some api calls that can do this and i will retrn this sto the browser.<br>
+Each Magento API call is incorporated with an elements sequence, such as:<br>
 <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br><br>
-    &nbsp;<br>
-    <br>
+&nbsp;&nbsp;&nbsp; HTTP verbs, which are actions executed against endpoint. Those are GET, PUT, POST, DELETE.<br>
+&nbsp;&nbsp;&nbsp; Endpoint, which stands for URL that defines server, 
+web service, the resource against which the request was executed, and 
+template parameter.<br>
+&nbsp;&nbsp;&nbsp; Call payload that contains all input attributes and 
+parameters supplied with the request. API operations input can be both 
+required and optional. One can indicate input parameters in the URI and 
+input attributes in the body of the request. It is possible to use 
+either JSON- or XML-formatted request body.<br>
+&nbsp;&nbsp;&nbsp; HTTP header renders request and response body info, 
+request authorization, response caching and cookies. It stands for 
+meta-data representation and is connected with the API request and 
+response.<br>
 <br>
-<h3>Endpoints</h3>
-Magento uses enpoint in its REST api to sliver back results, to get a 
-required data set you must refer to the appropriate endpoint.<br>
-<br>
-<meta charset="utf-8">
-<p style="box-sizing: border-box; outline: 0px; border: 0px; font-family: Montserrat, sans-serif; font-size: 16px; font-style: normal; font-weight: 300; margin: 0px 0px 1.5em; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 0); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">The
- Magento 2 SOAP and REST APIs are versioned, which means that there are 
-no guarantees that old API calls will work for future Magento versions.</p>
-<p style="box-sizing: border-box; outline: 0px; border: 0px; font-family: Montserrat, sans-serif; font-size: 16px; font-style: normal; font-weight: 300; margin: 0px 0px 1.5em; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 0); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">Each Magento API call is incorporated with an elements sequence, such as:</p>
-<ul style="box-sizing: border-box; outline: 0px; border: 0px; font-family: Montserrat, sans-serif; font-size: 16px; font-style: normal; font-weight: 300; margin: 0px 0px 1.5em 1em; padding: 0px; vertical-align: baseline; list-style: disc; color: rgb(0, 0, 0); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
-<li style="box-sizing: border-box; outline: 0px; border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px 0px 15px; padding: 0px; vertical-align: baseline;">HTTP verbs, which are actions executed against endpoint. Those are GET, PUT, POST, DELETE.</li><li style="box-sizing: border-box; outline: 0px; border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px 0px 15px; padding: 0px; vertical-align: baseline;">Endpoint,
- which stands for URL that defines server, web service, the resource 
-against which the request was executed, and template parameter.</li><li style="box-sizing: border-box; outline: 0px; border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px 0px 15px; padding: 0px; vertical-align: baseline;">Call
- payload that contains all input attributes and parameters supplied with
- the request. API operations input can be both required and optional. 
-One can indicate input parameters in the URI and input attributes in the
- body of the request. It is possible to use either JSON- or 
-XML-formatted request body.</li><li style="box-sizing: border-box; outline: 0px; border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px 0px 15px; padding: 0px; vertical-align: baseline;">HTTP
- header renders request and response body info, request authorization, 
-response caching and cookies. It stands for meta-data representation and
- is connected with the API request and response.</li>
-</ul>
-<p style="box-sizing: border-box; outline: 0px; border: 0px; font-family: Montserrat, sans-serif; font-size: 16px; font-style: normal; font-weight: 300; margin: 0px 0px 1.5em; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 0); font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">Magento 2 uses a built-in Swagger tool (which is shipped with each Magento 2 instance) for immediate REST API<span>&nbsp;</span><a href="https://devdocs.magento.com/swagger/" style="box-sizing: border-box; outline: 0px; border: 0px; font-family: inherit; font-size: 16px; font-style: inherit; font-weight: inherit; margin: 0px; padding: 0px; vertical-align: baseline; color: rgb(255, 79, 79); text-decoration: none;">documentation</a><span>&nbsp;</span>generation. We’ll consider some examples here below. This is the interface:</p>
+Magento 2 uses a built-in Swagger tool (which is shipped with each 
+Magento 2 instance) for immediate REST API documentation generation. 
+We’ll consider some examples here below. This is the interface:<br>
 These are the end point for the data I am looking for.<br>
-products&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; /V1/products<br>
+products&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /V1/products<br>
+<br>
+<br><br>
+<br>
+&nbsp;<br>
 <br>
 <br>
-<meta charset="utf-8">How to create rest based web api in magento2<br>
-<meta charset="utf-8"><a href="https://webkul.com/blog/magento2-custom-rest-api/">https://webkul.com/blog/magento2-custom-rest-api/</a><br>
-<br>
-<meta charset="utf-8">
-<h1 itemprop="name" class="grid--cell fs-headline1 fl1 ow-break-word" style="margin: 0px 0px 0.5em; padding: 0px; border: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.3; font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 2.07692rem !important; vertical-align: baseline; box-sizing: inherit; flex: 1 1 auto !important; overflow-wrap: break-word !important; color: rgb(36, 39, 41); letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><a href="https://magento.stackexchange.com/questions/158851/getting-value-through-javascript-and-rest-api" class="question-hyperlink" style="margin: 0px 0px 0.5em; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: normal; font-stretch: inherit; line-height: 1.35; font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 2.07692rem; vertical-align: baseline; box-sizing: inherit; color: rgb(36, 39, 41); text-decoration: none; cursor: pointer;">Getting value through javascript and REST api</a></h1>
 <br>
 <br>
-<meta charset="utf-8"><a href="https://magento.stackexchange.com/questions/158851/getting-value-through-javascript-and-rest-api">https://magento.stackexchange.com/questions/158851/getting-value-through-javascript-and-rest-api</a><br>
-<br>
-<br>
-<meta charset="utf-8">
-<h1 itemprop="name" class="grid--cell fs-headline1 fl1 ow-break-word" style="margin: 0px 0px 0.5em; padding: 0px; border: 0px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-weight: inherit; font-stretch: inherit; line-height: 1.3; font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 2.07692rem !important; vertical-align: baseline; box-sizing: inherit; flex: 1 1 auto !important; overflow-wrap: break-word !important; color: rgb(36, 39, 41); letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><a href="https://magento.stackexchange.com/questions/136028/magento-2-create-order-using-rest-api" class="question-hyperlink" style="margin: 0px 0px 0.5em; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: normal; font-stretch: inherit; line-height: 1.35; font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 2.07692rem; vertical-align: baseline; box-sizing: inherit; color: rgb(36, 39, 41); text-decoration: none; cursor: pointer;">Magento 2 - Create order using REST API</a></h1>
-<p><meta charset="utf-8"><a href="https://magento.stackexchange.com/questions/136028/magento-2-create-order-using-rest-api?rq=1">https://magento.stackexchange.com/questions/136028/magento-2-create-order-using-rest-api?rq=1</a></p>
-<p><br>
-</p>
-<br>
-<meta charset="utf-8"><a href="https://webkul.com/blog/magento2-custom-rest-api/">https://webkul.com/blog/magento2-custom-rest-api/</a><br>
-<br>
-<meta charset="utf-8"><br>
-<br>
-<meta charset="utf-8"><a href="https://alanstorm.com/magento-2-understanding-the-web-api-architecture/">https://alanstorm.com/magento-2-understanding-the-web-api-architecture/</a><br>
-<br>
-<br>
-<meta charset="utf-8"><a href="https://devdocs.magento.com/guides/v2.3/b2b/integrations.html">https://devdocs.magento.com/guides/v2.3/b2b/integrations.html</a><br>
-<br>
-rest examples<br>
-<br>
-<meta charset="utf-8"><a href="https://magento.stackexchange.com/questions/170921/magento-2-rest-api-usage-with-examples">https://magento.stackexchange.com/questions/170921/magento-2-rest-api-usage-with-examples</a><br>
-<br>
-<span style="color: rgb(0, 0, 238);"><span style="text-decoration: underline;">authentication<br>
-  </span></span><br>
-<span style="color: rgb(0, 0, 238);"><span style="text-decoration: underline;"><meta charset="utf-8"><a href="https://devdocs.magento.com/guides/v2.3/get-started/authentication/gs-authentication-token.html">https://devdocs.magento.com/guides/v2.3/get-started/authentication/gs-authentication-token.html</a><br>
-  </span></span>&nbsp;<br>
-    <br>
-<br>
-<h3>Selecting a Theme.</h3>
+<h3>
+Selecting a Theme.
 
-    I choose the Regna bootstrap theme and i will use this to display
+    </h3>
+<meta charset="utf-8">I choose the Regna bootstrap theme and i will use this to display
     the data.<br>
-    <h2>Credits</h2>
-    Magento endpoints. <meta charset="utf-8"><a href="https://devdocs.magento.com/guides/v2.3/b2b/integrations.html">https://devdocs.magento.com/guides/v2.3/b2b/integrations.html</a><br>
+    <h2>Credits</h2><br>
+<h3>
+Referenced material on the Magento API</h3>
+
+How to create rest <a href="https://webkul.com/blog/magento2-custom-rest-api/">based web api in magento2</a><span style="color: rgb(0, 0, 238);"><span style="text-decoration: underline;"></span></span><br>
+
+Magento <a href="https://webkul.com/blog/magento2-custom-rest-api/">REST API</a><br>
+
+Getting value <a href="https://magento.stackexchange.com/questions/158851/getting-value-through-javascript-and-rest-api">through javascript and REST api</a><br>
+
+Magento 2 - <a href="https://magento.stackexchange.com/questions/136028/magento-2-create-order-using-rest-api?rq=1">Create order using REST API</a><br>
+
+Understanding <a href="https://alanstorm.com/magento-2-understanding-the-web-api-architecture/">Magento API</a><br>
+
+Magento <a href="https://devdocs.magento.com/guides/v2.3/b2b/integrations.html">integrations</a><br>
+
+REST <a href="https://magento.stackexchange.com/questions/170921/magento-2-rest-api-usage-with-examples">examples</a><br>
+
+Magento <a href="https://devdocs.magento.com/guides/v2.3/get-started/authentication/gs-authentication-token.html">Authentication</a><br>
+
+Magento endpoints. <a href="https://devdocs.magento.com/guides/v2.3/b2b/integrations.html">https://devdocs.magento.com/guides/v2.3/b2b/integrations.html</a><br>
     Magento.com<br>
     Magento wiki https://en.wikipedia.org/wiki/Magento<br>
     bootstrap template.<br>
 <br>
-Starter guide&nbsp; <meta charset="utf-8"><a href="https://medium.com/@ahazeemi/the-totally-beginners-guide-to-magento-2-rest-api-3a773be2b425">https://medium.com/@ahazeemi/the-totally-beginners-guide-to-magento-2-rest-api-3a773be2b425</a><br><meta charset="utf-8"><a href="https://belvg.com/blog/how-to-use-magento-2-api-documentation-examples-tutorial.html">https://belvg.com/blog/how-to-use-magento-2-api-documentation-examples-tutorial.html</a><br>
+M2API Starter guide&nbsp; <meta charset="utf-8"><a href="https://medium.com/@ahazeemi/the-totally-beginners-guide-to-magento-2-rest-api-3a773be2b425">https://medium.com/@ahazeemi/the-totally-beginners-guide-to-magento-2-rest-api-3a773be2b425</a><br><meta charset="utf-8">How to use M2 API<a href="https://belvg.com/blog/how-to-use-magento-2-api-documentation-examples-tutorial.html">&nbsp;&nbsp; https://belvg.com/blog/how-to-use-magento-2-api-documentation-examples-tutorial.html</a><br>
 <br>
+Theme URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/, 
+Author: BootstrapMade.com, License: https://bootstrapmade.com/license/<br>
 <br>
 
     <br>

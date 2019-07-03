@@ -121,7 +121,20 @@ free api's only work on http. I settled on the most basic one and I got this wor
         <li>product type - to return matching product information</li>
         <li>customer name&nbsp; to return matching customer informatio</li>
       </ol>
-    </blockquote><br>
+    </blockquote>
+<h3>Magento Varaiables </h3>
+The following <a href="https://magento.stackexchange.com/questions/229860/ajax-call-getting-cors-errors-conflicts">example</a> shows the variables you need when communicating witht the Magento API to allow connections<br>
+<meta charset="utf-8"><br>
+<pre>var settings = {</pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "async": true,</pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "crossDomain": true,</pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "url": "https://&lt;domain&gt;/rest/V1/guest-carts",</pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "method": "POST",</pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "contentType": "application/json",<br>    "headers": {<br>                        "authorization": "Bearer az5t8r5a35mzbv3ssflcxfuh2g0b2ixq",<br>                        "cache-control": "no-cache"<br></pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
+<pre>
+</pre>
 <h3>Magento API Endpoints</h3>Magento uses enpoint in its REST api to 
 sliver back results, to get a required data set you must refer to the 
 appropriate endpoint.<br>

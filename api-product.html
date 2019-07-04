@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <title>M2 Api's</title>
+</head>
+
+<body>
+  <label>Enter Product Sku</label>
+  <input type="text" name="product-name" id="product-name" class="product-name" />
+  <div class="product-details">
+    
+</body>
+
+</html>
+<script>
+  $(document).ready(function() {
+    /*
+     * get product details by sku
+     * pass the Access Token
+     *
+     */
+    $('#product-name').change(function() {
+      var productName = $("#product-name").val();
+      var URL = "https://ciaranquinlan.com/rest/V1/products/" + productName;
+      if (productName) {
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": URL,
+          "method": "GET",
+          //           You can call this function with a delay image
+          //           beforeSend: function() {
+          //             $(".product .loading-image").show();
+          //           },
+          "headers": {
+            "authorization": "Bearer az5t8r5a35mzbv3ssflcxfuh2g0b2ixq",
+            "cache-control": "no-cache"
+          },
+          fail: function(xhr, textStatus, errorThrown) {
+
+            $(".product-details").html("<class='error'>Request failed, Server Down! Please try again later</div>");
+          },
+          error: function(xhr, ajaxOptions, thrownError) {
+            $(".product-details").html("<class='error'>Snap! No product found</div>");
+          }
+
+        }
+      }
+
+      $.ajax(settings).done(function(response) {
+        var desc = '';
+        var qty = '';
+        var productImage = '';
+         var productImageUrl = '';
+        console.log("full response=", response);
+        
+        // Find the short description in the custom attrib array    
+        jQuery.each(response.custom_attributes, function(i, val) {
+          if (val.attribute_code === 'short_description') {
+            desc = val.value;
+            console.log("val.value=", val.value);
+          }
+        });
+        // Find the image in the custom attrib array  and add https://ciaranquinlan.com/pub/media/catalog/product/
+        jQuery.each(response.custom_attributes, function(i, val) {
+          if (val.attribute_code === 'image') {
+            
+            productImage = "https://ciaranquinlan.com/pub/media/catalog/product/"+ val.value;
+            console.log("image=", productImage);
+          }
+        });
+
+        // Find the stock  in the extension attrib array       
+        if (response.extension_attributes.stock_item) {
+          qty = response.extension_attributes.stock_item.qty;
+        }
+
+        if (response.id) {
+
+          $(".product-details").html(
+            "The product you searched for is : " + response.name +
+            "</br>" +
+            "The Product short description is : " + desc +
+            "</br>" +
+            "The Product cost is: " + '$' + response.price +
+            "</br>" +
+            "The product is in stock:" + qty +
+            "The image is is in stock:" + qty +
+            "</br>"+
+            "<img src='" + productImage + "' alt='this is the product you asked for' style='width:242px;height:242px;border:0;' >"            
+          )
+        } else {
+          $(".order-details").html("<div class='error'>Something wrong - Result not found</div>");
+        }
+      });
+
+    });
+  });
+</script>

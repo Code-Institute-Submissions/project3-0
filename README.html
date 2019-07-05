@@ -79,8 +79,10 @@ The
     <h3>Sample data.</h3>
     <p>I installed a sample set of data based on a yoga store with the
       Luma theme.<br>
-      I created a number of customers and a number of orders so i could
-      test the system<br>
+      I created a number of products , customers and a number of orders so I and you can
+      test the connection via the api to the Magento system. <br>
+You can use order's numbers from 1 to 17<br>
+I created some Sku's <br>
     </p>
     <br>
     <h2>Project outline</h2>
@@ -99,30 +101,55 @@ and see on a map where they can find our products.</li>
   <li>Connect to a google map<br>
   </li>
 </ol>
-<p><br>
+<h2>Project outline</h2>
+
+
+
+    
+<p>The project will create a Html/Javascript/JQuery file that will
+      connect to the Magento 2 API on my domain.<br>
+      The page will return product, customer or order data based on the
+      requests made from the user.</p>
+<br>
+<p>
 </p>
 
     <h3>Project phases.</h3>
-    <br>
-1. I wanted to get started with using javascript calls and writing to 
-the browser so I will call an external URL to return&nbsp; location info
- like city and region to identify the browser.<br>
-I found a number of apis that will return this data, I spent a lot of 
+<h4>
+    Phase 1</h4>
+
+I wanted to get started with using javascript calls and writing to 
+the browser so I wanted call an external URL to return&nbsp; location info
+ like city, currency and region to identify the browser.<br>
+I found a number of apis that will return this data, <br>
+I spent a lot of 
 time getting them working outside of my localsetup and it turned out to 
-be https errors. The ciaranquinlan.com server is https only and these 
-free api's only work on http. I settled on the most basic one and I got this working. <br>
+be https errors. <br>
+The ciaranquinlan.com server is https only and these 
+free api's only work on http. I settled on the most basic one and I got this working and included it in my project.<br>
 <br>
-2. The next objective is to get the connection working to the M2 API.<br><br>
-3.&nbsp; The user will have three sections where the user can enter the search string and see the returned data<br>
+I got the following API's working to deliver browser data.<br>
+ipinfo.io&nbsp;&nbsp;&nbsp; <meta charset="utf-8"><a href="https://ciaranquinlan.com/project2/getipJS/myip.html">https://ciaranquinlan.com/project2/getipJS/myip.html</a><br>
+ipstack.com&nbsp; <meta charset="utf-8"><a href="https://ciaranquinlan.com/project2/getipJS/ipstack.html">https://ciaranquinlan.com/project2/getipJS/ipstack.html</a><br>
+geoplugin <meta charset="utf-8"><a href="https://ciaranquinlan.com/project2/getipJS/geoplugin.html">https://ciaranquinlan.com/project2/getipJS/geoplugin.html</a><br>
+geoplugin secure <meta charset="utf-8"><a href="https://ciaranquinlan.com/project2/getipJS/geoplugin-https.html">https://ciaranquinlan.com/project2/getipJS/geoplugin-https.html</a><br>
+<br>
+<br>
+<h4>Phase 2</h4>
+
+The next objective is to get the connection working to the M2 API.<br>
+<br>
+The user will have two sections where the user can enter the search string and see the returned data<br>
     <blockquote>
       <ol>
         <li>order id&nbsp; - to return order
           information&nbsp;&nbsp;&nbsp; </li>
         <li>product type - to return matching product information</li>
-        <li>customer name&nbsp; to return matching customer informatio</li>
+        
       </ol>
     </blockquote>
-<h3>Magento Varaiables </h3>
+<h5>Magento Varaiables </h5>
+
 The following <a href="https://magento.stackexchange.com/questions/229860/ajax-call-getting-cors-errors-conflicts">example</a> shows the variables you need when communicating witht the Magento API to allow connections<br>
 <pre>var settings = {</pre>
 <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "async": true,</pre>
@@ -136,49 +163,67 @@ The following <a href="https://magento.stackexchange.com/questions/229860/ajax-c
 <pre><br></pre>
 <p>
 </p>
-<h3>Magento API Endpoints</h3>Magento uses enpoint in its REST api to 
-sliver back results, to get a required data set you must refer to the 
-appropriate endpoint.<br>
+<h5>Magento API Endpoints</h5>
+Magento uses endpoint in its REST api to deliver&nbsp; back results, to get a required data set you must refer to the <a href="https://devdocs.magento.com/guides/v2.3/rest/list.html">
+appropriate endpoint</a>.<br>
 <br>
 The Magento 2 SOAP and REST APIs are versioned, which means that there 
 are no guarantees that old API calls will work for future Magento 
 versions.<br>
 <br>
 Each Magento API call is incorporated with an elements sequence, such as:<br>
-<br>
-&nbsp;&nbsp;&nbsp; HTTP verbs, which are actions executed against endpoint. Those are GET, PUT, POST, DELETE.<br>
+<ul>
+  <li>
+&nbsp;&nbsp;&nbsp; HTTP verbs, which are actions executed against endpoint. Those are GET, PUT, POST, DELETE.</li>
+  <li>
 &nbsp;&nbsp;&nbsp; Endpoint, which stands for URL that defines server, 
 web service, the resource against which the request was executed, and 
-template parameter.<br>
+template parameter.</li>
+  <li>
 &nbsp;&nbsp;&nbsp; Call payload that contains all input attributes and 
 parameters supplied with the request. API operations input can be both 
 required and optional. One can indicate input parameters in the URI and 
 input attributes in the body of the request. It is possible to use 
-either JSON- or XML-formatted request body.<br>
+either JSON- or XML-formatted request body.</li>
+  <li>
 &nbsp;&nbsp;&nbsp; HTTP header renders request and response body info, 
 request authorization, response caching and cookies. It stands for 
 meta-data representation and is connected with the API request and 
-response.<br>
+response.</li>
+</ul>
+
 <br>
 Magento 2 uses a built-in Swagger tool (which is shipped with each 
 Magento 2 instance) for immediate REST API documentation generation. 
-We’ll consider some examples here below. This is the interface:<br>
-These are the end point for the data I am looking for.<br>
-products&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /V1/products<br>
 <br>
-<br><br>
+I did not use this<br>
 <br>
-&nbsp;<br>
+These are the endpoints for the data I am looking for my API application.<br>
+<pre>
+GET&nbsp;&nbsp;&nbsp; /V1/orders/:id</pre>
+<pre>GET&nbsp;&nbsp;&nbsp; /V1/orders</pre>
+<pre>GET&nbsp;&nbsp;&nbsp; /V1/orders/:id/statuses</pre>
+<pre><br>POST&nbsp;&nbsp; /V1/products</pre>
+<pre>PUT&nbsp;&nbsp;&nbsp; /V1/products/:sku</pre>
+<pre>DELETE /V1/products/:sku</pre>
+<pre>GET&nbsp;&nbsp;&nbsp; /V1/products</pre>
+<pre>GET&nbsp;&nbsp;&nbsp; /V1/products/:sku</pre>
+<pre><br>GET&nbsp;&nbsp;&nbsp; /V1/customers/:customerId</pre>
+<pre>POST&nbsp;&nbsp; /V1/customers</pre>
+<pre>PUT&nbsp;&nbsp;&nbsp; /V1/customers/:customerId</pre>
 <br>
 <br>
+<br>
+Testing<br>
 <br>
 <br>
 <h3>
-Selecting a Theme.
+Bootstrap and CSS.
 
     </h3>
-<meta charset="utf-8">I choose the Regna bootstrap theme and i will use this to display
-    the data.<br>
+<meta charset="utf-8">I used some of the bootstrap and css that I learned in project 1.<br>
+<br>
+<br>
     <h2>Credits</h2><br>
 <h3>
 Referenced material on the Magento API</h3>
@@ -211,7 +256,41 @@ Theme URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/,
 Author: BootstrapMade.com, License: https://bootstrapmade.com/license/<br>
 <br>
 
-    <br>
-  
+    <br><br>
+<br>
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+- Project Purpose<br>
+- UX design<br>
+- Suitability for purpose<br>
+- Navigation<br>
+- Ease of Use<br>
+- Information Architecture<br>
+- Responsive Design<br>
+- Image Presentation<br>
+- Colour scheme and typography<br>
+- Appropriate use of HTML<br>
+- Appropriate use of CSS<br>
+- Directory Structure and File Naming<br>
+- Version Control<br>
+- Testing implementation<br>
+- Testing write-up<br>
+- Readme file<br>
+- Comments<br>
+- Deployment implementation<br>
+- Deployment write-up<br>
 
 </body></html>

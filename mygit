@@ -1,0 +1,12 @@
+#!/bin/bash
+# My git script
+
+# git init
+read -p "Adding -Press enter to continue"
+git add ./
+read -p "Commiting - Press enter to continue"
+git commit -m "products returning from api"
+#git remote add origin https://github.com/ciaranq/project2.git
+read -p "Pushing - Press enter to continue"
+git push -u origin master
+

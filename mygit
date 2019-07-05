@@ -2,14 +2,13 @@
 # My git script
 
 # git init
-read -p "Adding - Press enter to continue"
+read -p "Adding - Press enter to add all"
 git add ./
-read -p "Waiting for commit message:" commit
+read -p "Enter commit message:" commit
 git commit -m "$commit"
-
 #git remote add origin https://github.com/ciaranq/project2.git
-read -p "Pushing - Press enter to continue"
-#git push -u origin master
+read -p "Pushing - Press enter to push"
+git push -u origin master
 
 echo "all done "
 

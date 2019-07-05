@@ -2,10 +2,10 @@
 # My git script
 
 # git init
-read -p "Adding -Press enter to continue"
+read -p "Adding - Press enter to continue"
 git add ./
-read -s “Waiting for commit message:” commit-var
-git commit -m "$commit-var!"
+read -p "Waiting for commit message:" commit
+git commit -m "$commit"
 
 #git remote add origin https://github.com/ciaranq/project2.git
 read -p "Pushing - Press enter to continue"

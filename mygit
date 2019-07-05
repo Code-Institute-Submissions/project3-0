@@ -4,13 +4,12 @@
 # git init
 read -p "Adding -Press enter to continue"
 git add ./
-
-read -s “Waiting for commit message: ” commit-var
+read -s “Waiting for commit message:” commit-var
 git commit -m "$commit-var!"
 
 #git remote add origin https://github.com/ciaranq/project2.git
 read -p "Pushing - Press enter to continue"
-git push -u origin master
+#git push -u origin master
 
 echo "all done "
 

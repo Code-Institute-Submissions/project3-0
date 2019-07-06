@@ -6,14 +6,63 @@
   <body>
     <h1><font color="#990000">Ciaran Quinlan - Project 2 - API project
       </font></h1>
-    <p>For the second project I have chosen to do a sample application
+<h2>
+
+
+Project Purpose</h2>
+<p>For the second project I have chosen to do a&nbsp; application
       using the Magento ecommerce API. I have chosen this API because I
       am somewhat familiar with the application but I have never used
       its api.<br>
+
       I may work with this in the future and I want to investigate
       further how to use this API.<br>
-    </p>
-    <h2>Magento Ecommerce system</h2>
+The project will identify a brwser location and allow the use to search for an order or product from the ecommerce system.<br>
+</p>
+
+<p>I want to use a number of API calls or javascript function to write data to the browser. <br>
+</p>
+
+<ol>
+<li>The page will find out where the customer id browsing from so location infocan be used for offers.</li><li>
+    The project will will
+      connect to the Magento 2 ecommerce API on my domain. Data from 
+Mageto like order, product or customer data can be displyed on the 
+screen.</li><li>They can query return product, customer or order data based on the
+      requests made from the user.<br>
+and see on a map where they can find our products.</li><li>Connect to a google map<br>
+  </li>
+</ol>
+
+
+
+
+
+    
+<p>The project will create a Html/Javascript/JQuery file that will
+      connect to the Magento 2 API on my domain.<br>
+      The page will return product, customer or order data based on the
+      requests made from the user.<br>
+</p>
+<p>FRom a user's point of view this will be&nbsp; useful because Magento is a very large application and a quick 
+small html page to get an order status is&nbsp; quicker<br>
+than&nbsp; logging 
+into the system.</p>
+<h2>&nbsp;UX design</h2>
+<p>I did some mockups in Adobe XD, as the project progressed i was able to improve the design.<a href="https://ciaranquinlan.com//project2/docs/wireframes/MagentoAPIPage.png"><br>
+  </a><span style="color: rgb(0, 0, 238);"><span style="text-decoration: underline;"><a href="https://ciaranquinlan.com//project2/docs/wireframes/MagentoAPIPage.png">Design 1</a><br>
+      <a href="https://ciaranquinlan.com//project2/docs/wireframes/Project2-API.png">Design 2</a></span></span></p>
+<h2>
+Navigation &amp; Ease of Use</h2>
+<p>I created a simple menu on my page, the main purpose of the project was the API connection<br>
+</p>
+<h2>Information Architecture &amp; the Magento Ecommerce API<br>
+</h2>
+
+<p>I include some information on Magento and its API.<br>
+</p>
+
+    
     <p><b>Magento</b> is an <a href="https://en.wikipedia.org/wiki/Open-source_software" title="Open-source software">open-source</a> and commercial <a href="https://en.wikipedia.org/w/index.php?title=E-commerce_platform&amp;action=edit&amp;redlink=1" class="new" title="E-commerce platform (page does not exist)">e-commerce
         platform</a> written in <a href="https://en.wikipedia.org/wiki/PHP" title="PHP">PHP</a>. </p>
     <p>Magento uses the <a href="https://en.wikipedia.org/wiki/MySQL" title="MySQL">MySQL</a> or MariaDB relational database
@@ -31,8 +80,10 @@
       version i will be working with. Sometimes I will refer to it
       simply as M2<br>
     </p>
-    <h2>Magento API description and summary
-    </h2>
+    
+<h3>Magento API description and summary
+    </h3>
+
     <p>The Magento web API framework provides integrators and developers
       the means to use web services to communicate with the Magento
       ecommerce system. </p>
@@ -49,14 +100,16 @@
 The
       learning outcomes for this section of the course include: being
       able to access external resources, work with external data,
-      deserialize JSON data, and create data tables with pagination.</p>
-    <p><br>
-      As i researched the API i aslo realised that authentication is
-      required and also the use of other libraries like require JS </p>
-    <h2>Getting the environment setup.</h2>
+      deserialize JSON data, and create data tables with pagination.</p>As i researched the API i aslo realised that authentication is
+      required and also the use of other libraries like require JS 
+    
+<h3>Getting the environment setup.</h3>
+
     <p>In order to start the project I had to install the Magento
       application on a server (it is too complicated to install this
-      locally).</p>
+      locally) and configure it so i could use the API and connect to it.<br>
+Follow these links to find oit more about how i setup the system.<br>
+</p>
     <ol>
       <li> The details of installing are in the link <a href="docs/Magento-Install.html">Magento Install details.</a><br>
         I installed Magento in the root directory of my domain under a
@@ -76,41 +129,76 @@ The
         This <a href="docs/Magento-Commands.html">document details how
           I set myself up to use the Magento CLI.</a></li>
     </ol>
-    <h3>Sample data.</h3>
+    <h3>Sample data and how to test the system<br>
+</h3>
     <p>I installed a sample set of data based on a yoga store with the
       Luma theme.<br>
       I created a number of products , customers and a number of orders so I and you can
       test the connection via the api to the Magento system. <br>
-You can use order's numbers from 1 to 17<br>
-I created some Sku's <br>
-    </p>
-    <br>
-    <h2>Project outline</h2>
-<p>I want to use a number of API calls or javascript function to write data to the browser. <br>
+You can use<span style="font-weight: bold;"> order's numbers from 1 to 17 to check some previous orders.<br>
+</span>I also created a guide on <a href="https://ciaranquinlan.com//project2/docs/createanorderinMagento2.html">how to make your own order. follow this link.</a><br>
 </p>
-<ol>
-  <li>The page will find out where the customer id browsing from so location infocan be used for offers.</li>
-  <li>
-    The project will will
-      connect to the Magento 2 ecommerce API on my domain. Data from 
-Mageto like order, product or customer data can be displyed on the 
-screen.</li>
-  <li>They can query return product, customer or order data based on the
-      requests made from the user.<br>
-and see on a map where they can find our products.</li>
-  <li>Connect to a google map<br>
-  </li>
-</ol>
-<h2>Project outline</h2>
+<p><span style="font-weight: bold;"></span>
+The system has over 250 SKU's installed. To find a SKU for testing just browse for a product and you will see the SKU under the stock status.<br>
+I also created some Sku's from <span style="font-weight: bold;">numbers from 1 to 1.</span>
+    </p>
+<h3>Responsive Design &amp; Image Presentation</h3>
+<p>I used bootstrap and created some extra css for the presentation.<br>
+</p>
+<h3>
 
+Directory Structure and File Naming</h3>
+<p>All my work is included in the project 2 folder that is in the project repo.<br>
+I did not put the Magento application in these as its too large. (&gt;350mb)<br>
+The folders are<br>
+Js - Javascript files<br>
+css - CSS files<br>
+img - Images<br>
+getip/JS - scripts to get the ip data<br>
+docs - documents referenced in this readme.<br>
+lib - scripts for bootstrap , jquery etc.<br>
+drafts - archive of test and draft files<br>
+</p>
+<h3><br>
+</h3>
+<p></p>
+<h2>Version Control &amp; Testing implementation</h2>
+<p>All the version are up in the Git respository at <meta charset="utf-8"><a href="https://github.com/ciaranq/project2">https://github.com/ciaranq/project2</a></p>
+<p>
+    </p>
+<h3>How to test the system.</h3>
+<h4>Testing the IP scripts.</h4>
+<p>The ip location script should return you location, if you have a vpn 
+you can change location and it will reflect in the response.<br>
+</p>
+<h4>Testing the API scripts.</h4>
 
+<p>
+You can use<span style="font-weight: bold;"> order's numbers from 1 to 17 to check some previous orders.<br>
+</span>I also created a guide on <a href="https://ciaranquinlan.com//project2/docs/createanorderinMagento2.html">how to make your own order. follow this link.</a><br>
+</p>
 
-    
-<p>The project will create a Html/Javascript/JQuery file that will
-      connect to the Magento 2 API on my domain.<br>
-      The page will return product, customer or order data based on the
-      requests made from the user.</p>
+<p><span style="font-weight: bold;"></span>
+The system has over 250 SKU's installed. To find a SKU for testing just browse for a product and you will see the SKU under the stock status.<br>
+</p>
+<p>
+  <img src="file:///Users/ciaran/Dropbox/Screenshots/Screenshot%202019-07-06%2017.50.42.png" alt="sku" style=" width: 492px; height: 188px;"> <br>
+I also created some Sku's from <span style="font-weight: bold;">numbers from 1 to 10</span>
+    </p>
 <br>
+<h3>
+
+Readme file</h3>
+<p>This <a href="https://ciaranquinlan.com//project2/README.html">file is located here</a><br>
+and this is the <a href="https://ciaranquinlan.com//project2/docs/">directory of the associated files.</a><br>
+and the contents of<br>
+</p>
+<br>
+<h3>
+
+Deployment &amp; implementation</h3>
+
+
 <p>
 </p>
 
@@ -144,11 +232,20 @@ The user will have two sections where the user can enter the search string and s
       <ol>
         <li>order id&nbsp; - to return order
           information&nbsp;&nbsp;&nbsp; </li>
-        <li>product type - to return matching product information</li>
         
-      </ol>
+<li>product type - to return matching product information</li>
+</ol>
+<ol>
+
+        
+      
+</ol>
+
     </blockquote>
+<p>Here is some more information on how i implemented the Magento API<br>
+</p>
 <h5>Magento Varaiables </h5>
+
 
 The following <a href="https://magento.stackexchange.com/questions/229860/ajax-call-getting-cors-errors-conflicts">example</a> shows the variables you need when communicating witht the Magento API to allow connections<br>
 <pre>var settings = {</pre>
@@ -160,7 +257,7 @@ The following <a href="https://magento.stackexchange.com/questions/229860/ajax-c
 <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
 <pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
 <p>For the full list you need to use see this page where it shows you how to <a href="https://devdocs.magento.com/guides/v2.3/get-started/gs-web-api-request.html">construct a Magento API request</a></p>
-<pre><br></pre>
+
 <p>
 </p>
 <h5>Magento API Endpoints</h5>
@@ -192,15 +289,14 @@ meta-data representation and is connected with the API request and
 response.</li>
 </ul>
 
-<br>
+
 Magento 2 uses a built-in Swagger tool (which is shipped with each 
 Magento 2 instance) for immediate REST API documentation generation. 
 <br>
 I did not use this<br>
 <br>
 These are the endpoints for the data I am looking for my API application.<br>
-<pre>
-GET&nbsp;&nbsp;&nbsp; /V1/orders/:id</pre>
+<pre>GET&nbsp;&nbsp;&nbsp; /V1/orders/:id</pre>
 <pre>GET&nbsp;&nbsp;&nbsp; /V1/orders</pre>
 <pre>GET&nbsp;&nbsp;&nbsp; /V1/orders/:id/statuses</pre>
 <pre><br>POST&nbsp;&nbsp; /V1/products</pre>
@@ -211,86 +307,54 @@ GET&nbsp;&nbsp;&nbsp; /V1/orders/:id</pre>
 <pre><br>GET&nbsp;&nbsp;&nbsp; /V1/customers/:customerId</pre>
 <pre>POST&nbsp;&nbsp; /V1/customers</pre>
 <pre>PUT&nbsp;&nbsp;&nbsp; /V1/customers/:customerId</pre>
+<br><br>
 <br>
-<br>
-<br>
-Testing<br>
-<br>
-<br>
-<h3>
-Bootstrap and CSS.
+    <h2>Credits &amp; Referenced material on the Magento API <br>
+</h2>
+<p>How to create rest <a href="https://webkul.com/blog/magento2-custom-rest-api/">based web api in magento2</a><span style="color: rgb(0, 0, 238);"><span style="text-decoration: underline;"></span></span><br>
+</p>
+<p>
 
-    </h3>
-<meta charset="utf-8">I used some of the bootstrap and css that I learned in project 1.<br>
-<br>
-<br>
-    <h2>Credits</h2><br>
-<h3>
-Referenced material on the Magento API</h3>
+Magento <a href="https://webkul.com/blog/magento2-custom-rest-api/">REST API</a></p>
+<p>
 
-How to create rest <a href="https://webkul.com/blog/magento2-custom-rest-api/">based web api in magento2</a><span style="color: rgb(0, 0, 238);"><span style="text-decoration: underline;"></span></span><br>
+Getting value <a href="https://magento.stackexchange.com/questions/158851/getting-value-through-javascript-and-rest-api">through javascript and REST api</a></p>
+<p>
 
-Magento <a href="https://webkul.com/blog/magento2-custom-rest-api/">REST API</a><br>
+Magento 2 - <a href="https://magento.stackexchange.com/questions/136028/magento-2-create-order-using-rest-api?rq=1">Create order using REST API</a></p>
+<p>
 
-Getting value <a href="https://magento.stackexchange.com/questions/158851/getting-value-through-javascript-and-rest-api">through javascript and REST api</a><br>
+Understanding <a href="https://alanstorm.com/magento-2-understanding-the-web-api-architecture/">Magento API</a></p>
+<p>
 
-Magento 2 - <a href="https://magento.stackexchange.com/questions/136028/magento-2-create-order-using-rest-api?rq=1">Create order using REST API</a><br>
+Magento <a href="https://devdocs.magento.com/guides/v2.3/b2b/integrations.html">integrations</a></p>
+<p>
 
-Understanding <a href="https://alanstorm.com/magento-2-understanding-the-web-api-architecture/">Magento API</a><br>
+REST <a href="https://magento.stackexchange.com/questions/170921/magento-2-rest-api-usage-with-examples">examples</a></p>
+<p>
 
-Magento <a href="https://devdocs.magento.com/guides/v2.3/b2b/integrations.html">integrations</a><br>
+Magento <a href="https://devdocs.magento.com/guides/v2.3/get-started/authentication/gs-authentication-token.html">Authentication</a></p>
+<p>
 
-REST <a href="https://magento.stackexchange.com/questions/170921/magento-2-rest-api-usage-with-examples">examples</a><br>
-
-Magento <a href="https://devdocs.magento.com/guides/v2.3/get-started/authentication/gs-authentication-token.html">Authentication</a><br>
-
-Magento endpoints. <a href="https://devdocs.magento.com/guides/v2.3/b2b/integrations.html">https://devdocs.magento.com/guides/v2.3/b2b/integrations.html</a><br>
- How to <a href="https://devdocs.magento.com/guides/v2.3/get-started/gs-web-api-request.html">construct a Magento API request</a><br>
-    Magento.com<br>
-    Magento wiki https://en.wikipedia.org/wiki/Magento<br>
-    bootstrap template.<br>
-<br>
-M2API Starter guide&nbsp; <meta charset="utf-8"><a href="https://medium.com/@ahazeemi/the-totally-beginners-guide-to-magento-2-rest-api-3a773be2b425">https://medium.com/@ahazeemi/the-totally-beginners-guide-to-magento-2-rest-api-3a773be2b425</a><br><meta charset="utf-8">How to use M2 API<a href="https://belvg.com/blog/how-to-use-magento-2-api-documentation-examples-tutorial.html">&nbsp;&nbsp; https://belvg.com/blog/how-to-use-magento-2-api-documentation-examples-tutorial.html</a><br>
-<br>
+Magento endpoints. <a href="https://devdocs.magento.com/guides/v2.3/b2b/integrations.html">https://devdocs.magento.com/guides/v2.3/b2b/integrations.html</a></p>
+<p>
+ How to <a href="https://devdocs.magento.com/guides/v2.3/get-started/gs-web-api-request.html">construct a Magento API request</a></p>
+<p>
+    Magento.com</p>
+<p>
+    Magento wiki https://en.wikipedia.org/wiki/Magento</p>
+<p>
+</p>
+<p>
+M2API Starter guide&nbsp; <a href="https://medium.com/@ahazeemi/the-totally-beginners-guide-to-magento-2-rest-api-3a773be2b425">https://medium.com/@ahazeemi/the-totally-beginners-guide-to-magento-2-rest-api-3a773be2b425</a></p>
+<meta charset="utf-8"><meta charset="utf-8">
+<p>How to use M2 API<a href="https://belvg.com/blog/how-to-use-magento-2-api-documentation-examples-tutorial.html">&nbsp;&nbsp; https://belvg.com/blog/how-to-use-magento-2-api-documentation-examples-tutorial.html</a></p>
+<p>
+</p>
+<p>
 Theme URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/, 
-Author: BootstrapMade.com, License: https://bootstrapmade.com/license/<br>
-<br>
-
-    <br><br>
-<br>
-<br>
+Author: BootstrapMade.com, License: https://bootstrapmade.com/license/</p>
 
 
-<br>
-
-
-<br>
-
-
-<br>
-
-
-<br>
-
-
-- Project Purpose<br>
-- UX design<br>
-- Suitability for purpose<br>
-- Navigation<br>
-- Ease of Use<br>
-- Information Architecture<br>
-- Responsive Design<br>
-- Image Presentation<br>
-- Colour scheme and typography<br>
-- Appropriate use of HTML<br>
-- Appropriate use of CSS<br>
-- Directory Structure and File Naming<br>
-- Version Control<br>
-- Testing implementation<br>
-- Testing write-up<br>
-- Readme file<br>
-- Comments<br>
-- Deployment implementation<br>
-- Deployment write-up<br>
 
 </body></html>

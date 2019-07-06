@@ -23,7 +23,110 @@
   <link href="lib/animate/animate.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
+   <link href="css/style.css" rel="stylesheet">
+
+    <!-- Ciarans Stylesheet File -->
+   <link href="css/cjqstyle.css" rel="stylesheet">
+  
+  <style>
+      /* IP Location Section
+--------------------------------*/
+
+#location {
+  background: #f7f7f7;
+  padding: 80px 0 60px 0;
+  font-size: 30px;
+  display: block;
+  color: #2dc997;
+  padding: 20px;
+  margin: 0 0 20px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.blink {
+  animation: blinker 1s step-start infinite;
+  color: red;
+  text-align: center;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+  
+    
+/* About Us Section
+--------------------------------*/
+#order {
+  background: rgb(148, 149, 224);
+  padding: 10px 0;
+}
+
+#order .order-container .background {
+  min-height: 300px;
+  margin-bottom: 10px;
+}
+#order .order-container .title {
+  color: #333;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+@media (max-width: 768px) {
+  #order .order-container .title {
+    padding-top: 15px;
+  }
+}
+
+#order .order-container p {
+  line-height: 26px;
+}
+
+#order .order-container .icon-box {
+  background: #fff;
+  background-size: cover;
+  padding: 0 0 30px 0;
+}
+
+#order .order-container .icon-box .icon {
+  float: left;
+  background: #fff;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+  border: 2px solid #2dc997;
+}
+
+#order .order-container .icon-box .icon i {
+  color: #2dc997;
+  font-size: 24px;
+}
+
+#order .order-container .icon-box .title {
+  margin-left: 80px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+#order .order-container .icon-box .title a {
+  color: #111;
+}
+
+#order .order-container .icon-box .description {
+  margin-left: 80px;
+  line-height: 24px;
+  font-size: 14px;
+}
+
+  </style>
 
   <!-- =======================================================
     Theme borrowed from Name: Regna, Author: BootstrapMade.com
@@ -78,23 +181,10 @@
       Location Offer Section
     ============================-->
     <section id="location">
-      <style>
-        .blink {
-          animation: blinker 1s step-start infinite;
-          color: red;
-          text-align: center;
-        }
 
-        @keyframes blinker {
-          50% {
-            opacity: 0;
-          }
-        }
-      </style>
       <div class="container wow fadeIn">
         <div class="section-header">
-          <h3 class="section-title">Welcome</h3>
-          <p class="section-description">Today is your lucky day! </p>
+          <h3 class="section-title">Welcome -Today is your lucky day! </h3>
         </div>
         <p class="blink" id="country">All visitors from </p>
         <script type="application/javascript">
@@ -127,10 +217,17 @@
               <!-- <button type="submit" class="getorder" id="getorder">Order!</button> -->
               <h4 class="title">Order Details: <i class="fa fa-gift"></i> </h4>
               <!-- the order details will be sent here. -->
-              <p class="description order-details"> </p>
+              <p class="description order-details1"> </p>
             </div>
           </div>
 
+
+
+
+
+
+
+          
         </div>
         <!-- #end row -->
       </div>
@@ -139,46 +236,78 @@
     <!-- #order section -->
 
     <!--==========================
+      About Us Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+        <div class="row about-container">
+
+          <div class="col-lg-6 content order-lg-1 order-2">
+            <h2 class="title order-intro"></h2>
+            <p class="order-details">
+            </p>
+
+            <div class="icon-box wow fadeInUp">
+              <div class="icon"><i class="fa fa-shopping-bag"></i></div>
+              <h4 class="title"><a href="">Order Status</a></h4>
+              <p class="description order-status"></p>
+            </div>
+
+            <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
+              <div class="icon"><i class="fa fa-photo"></i></div>
+              <h4 class="title "><a href="">Payment Info</a></h4>
+              <p class="description order-price"></p>
+            </div>
+
+            <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
+              <div class="icon"><i class="fa fa-bar-chart"></i></div>
+              <h4 class="title"><a href="">Shipping</a></h4>
+              <p class="description order-close"></p>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6 prodImage order-lg-2 order-1 wow fadeInRight order-details"></div>
+        </div>
+
+      </div>
+    </section>
+    <!-- #about -->
+
+
+    <!--==========================
       Products Section
     ============================-->
     <section id="products">
-       <div class="container wow fadeIn">
+      <div class="container wow fadeIn">
         <div class="section-header">
           <h3 class="section-title">Check a Product SKU</h3>
           <p class="section-description">Enter your SKU get product info.</p>
-
-          <label>Enter Product Sku</label>
-          <input type="text" name="product-name" id="product-name" class="product-name" />
-          <div class="product-details"> </div>
-          
-           </div>  <!--end section-header -->
-        
-        
-
         </div>
-        <!-- #end container -->
-     
+        <div class="row">
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="box">
+              <!--           <label>Enter Product Sku</label> -->
+              <input type="text" name="product-name" id="product-name" class="product-name" placeholder="enter Product Code" />
+              <h4 class="title">Product Details: <i class="fa fa-rocket"></i> </h4>
+              <div class="product-details"> </div>
+            </div>
+            <!--   end box  -->
+          </div>
+          <!--  end col -->
+        </div>
+        <!-- #end row -->
+      </div>
+      <!-- #end container -->
     </section>
     <!-- #product section -->
-    
-    
-    <div class="row">
-  <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-    <div class="box">
-      <input type="text" name="product-id" id="product-id" class="product-id" placeholder="enter product ID" />
-      <button type="submit" class="getorder" id="getorder">Order!</button>
-      <h4 class="title">Product Details: <i class="fa fa-rocket"></i> </h4>
-<!--  the order details will be sent here. 
-      <p class="description product-details"> </p>-->
-    </div>
-    <!--   end box  -->
-  </div>
-  <!--  end col -->
-</div>
-<!-- #end row -->
-    
-    
-    
+
+
+
+
+
+
+
 
 
     <!--==========================
@@ -208,14 +337,12 @@
       </div>
       <div class="credits">
         <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
+  
           Licensing information: https://bootstrapmade.com/license/
           Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Regna
         -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+
       </div>
-    </div>
   </footer>
   <!-- #footer -->
 
@@ -240,170 +367,198 @@
   <script src="js/main.js"></script>
   <!-- Magento API connection Javascript File -->
   <!-- written to return the info back for order and product -->
-<!--   <script src="js/cjq.js"></script>
+  <!--   <script src="js/cjq.js"></script>
    -->
   <script>
-   //   The ready() method is used to make a function available after the document is loaded.
- $(document).ready(function() {
-   /*
-    * get order details by order id
-    * pass the Access Token
-    * return the order details form order endpoint
-    */
-   // The change() method triggers the change event, or attaches a function to run when a change event occurs.
-   $('#order-id').change(function() {
-     //  val() is used to get input elements values in jQuery
-     var orderId = $("#order-id").val();
-     //  var customurl = "<?php echo $this->getUrl().'frontname/index/index'?>";
-     //  check the order is correct
-     // this is the magento end point for orders
+    //   The ready() method is used to make a function available after the document is loaded.
+    $(document).ready(function() {
+      /*
+       * get order details by order id
+       * pass the Access Token
+       * return the order details form order endpoint
+       */
+      // The change() method triggers the change event, or attaches a function to run when a change event occurs.
+      $('#order-id').change(function() {
+        //  val() is used to get input elements values in jQuery
+        var orderId = $("#order-id").val();
+        //  var customurl = "<?php echo $this->getUrl().'frontname/index/index'?>";
+        //  check the order is correct
+        // this is the magento end point for orders
 
-     var URL = "https://ciaranquinlan.com/rest/V1/orders/" + orderId;
+        var URL = "https://ciaranquinlan.com/rest/V1/orders/" + orderId;
 
-     if (orderId) {
-       //               must set these variables for accessing the M2 api
-       var settings = {
-         "async": true,
-         "crossDomain": true,
-         "url": URL,
-         "method": "GET",
-         "headers": {
-           // This is the Integrations authorization Access Token setup in Magento
-           // Log in to Admin and click System > Extensions > Integrations to display the Integrations page
-           "authorization": "Bearer az5t8r5a35mzbv3ssflcxfuh2g0b2ixq",
-           "cache-control": "no-cache"
-         },
-         fail: function(xhr, textStatus, errorThrown) {
-           $(".order-details").html("<div class='error'>Request has failed, Server on fire, Please try again later</div>");
-         },
-         error: function(xhr, ajaxOptions, thrownError) {
-           $(".order-details").html("<div class='error'>We are really sorry, we cant find your order!</div>");
-         }
-       }
-     }
-     // You can access the M2 api with AJAX functions and done returns values into response from the endpoint
-     // The order details will be put into the response json array
-     $.ajax(settings).done(function(response) {
-       // all the contents of the response are sent to console.  
-       console.log(response);
-       // In M2 the following api varables are use for orders: 
-       // order_id is the internal Magento order ID (database table auto increment id)
-       // increment_id is the ID which you communicate to your customer - this is what we need.
-       // quote_id is the internal quote id 
+        if (orderId) {
+          //               must set these variables for accessing the M2 api
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": URL,
+            "method": "GET",
+            "headers": {
+              // This is the Integrations authorization Access Token setup in Magento
+              // Log in to Admin and click System > Extensions > Integrations to display the Integrations page
+              "authorization": "Bearer az5t8r5a35mzbv3ssflcxfuh2g0b2ixq",
+              "cache-control": "no-cache"
+            },
+            fail: function(xhr, textStatus, errorThrown) {
+              $(".order-details").html("<div class='error'>Request has failed, Server on fire, Please try again later</div>");
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+              $(".order-details").html("<div class='error'>We are really sorry, we cant find your order!</div>");
+            }
+          }
+        }
+        // You can access the M2 api with AJAX functions and done returns values into response from the endpoint
+        // The order details will be put into the response json array
+        $.ajax(settings).done(function(response) {
+          // all the contents of the response are sent to console.  
+          console.log(response);
+          // In M2 the following api varables are use for orders: 
+          // order_id is the internal Magento order ID (database table auto increment id)
+          // increment_id is the ID which you communicate to your customer - this is what we need.
+          // quote_id is the internal quote id 
 
-       if (response.increment_id) {
-         // need to check if customer is undefined, this will happen if ordered and are not registered customers.
-         var firstName = response.customer_firstname;
-         if (firstName === undefined || firstName === null) {
-           firstName = "Guest Visitor";
-         }
-         // get the day they placed the order and reformat it.
-         var datelogCreate = new Date(response.created_at);
-         var longDateCreate = datelogCreate.toString()
-         var dayMonDateCreate = longDateCreate.substring(0, 10);
-         // get the update day they placed the order and reformat it.
-         var datelogUpdate = new Date(response.created_at);
-         var longDateUpdate = datelogUpdate.toString()
-         var dayMonDateUpdate = longDateUpdate.substring(0, 10);
-         // blot out part of the email address - next version!
-         console.log("the day of order is", dayMonDateCreate, dayMonDateUpdate);
-         $(".order-details").html(" " +
-           "Hi " + firstName + "<br>" + "Thank you for your order ref#:" + orderId + " on " + dayMonDateCreate + "." + "<br>" +
-           "Your order was updated on " + dayMonDateUpdate + " to order status of " + response.status + "." + "<br>" +
-           "We sent the details to email " + response.customer_email + "." + "<br>" +
-           "The Order total was: " + "$" + response.grand_total + "." + "<br>" +
-           "Thanks for you custom." + "<br>"
-         )
-       } else {
-         $(".order-details").html("<div class='error'>I'm really sorry your order details are missing.</div>");
-       }
-     });
+          if (response.increment_id) {
+            // need to check if customer is undefined, this will happen if ordered and are not registered customers.
+            var firstName = response.customer_firstname;
+            if (firstName === undefined || firstName === null) {
+              firstName = "Guest Visitor";
+            }
+            // get the day they placed the order and reformat it.
+            var datelogCreate = new Date(response.created_at);
+            var longDateCreate = datelogCreate.toString()
+            var dayMonDateCreate = longDateCreate.substring(0, 10);
+            // get the update day they placed the order and reformat it.
+            var datelogUpdate = new Date(response.created_at);
+            var longDateUpdate = datelogUpdate.toString()
+            var dayMonDateUpdate = longDateUpdate.substring(0, 10);
+            // blot out part of the email address - next version!
+            console.log("the day of order is", dayMonDateCreate, dayMonDateUpdate);
 
-   });
-   $('#product-name').change(function() {
-     console.log("inproduct");
-     var productName = $("#product-name").val();
-     var URL = "https://ciaranquinlan.com/rest/V1/products/" + productName;
-     if (productName) {
-       var settings = {
-         "async": true,
-         "crossDomain": true,
-         "url": URL,
-         "method": "GET",
-         //           You can call this function with a delay image
-         //           beforeSend: function() {
-         //             $(".product .loading-image").show();
-         //           },
-         "headers": {
-           "authorization": "Bearer az5t8r5a35mzbv3ssflcxfuh2g0b2ixq",
-           "cache-control": "no-cache"
-         },
-         fail: function(xhr, textStatus, errorThrown) {
+            $(".order-intro").html(" " +
+              "Hi " + firstName + "<br>" +
+              "Thank you for your order, we appreciate your business!"
+            )
 
-           $(".product-details").html("<class='error'>Request failed, Server Down! Please try again later</div>");
-         },
-         error: function(xhr, ajaxOptions, thrownError) {
-           $(".product-details").html("<class='error'>Snap! No product found</div>");
-         }
+            $(".order-details").html(" ")
+            $(".order-status").html(" " +
+              "Your order ref#:" + orderId + " placed on " + dayMonDateCreate + "." + "<br>" +
+              "was updated on " + dayMonDateUpdate + " to order status of " + response.status + "." + "<br>"
+            )
+            $(".order-price").html(" " +
+              "The Order total was: " + "$" + response.grand_total + "." + "<br>" +
+              "We received payment with" + "<br>"
+            )
+            $(".order-close").html(" " +
+              "You choose shipping method., enjoy your product" +"<br>" +
+              "Thanks for you custom." + "Namaste" + "<br>"
+            )
+            $(".order-details1").html(" " +
+              "Hi " + firstName + "<br>" + "Thank you for your order ref#:" + orderId + " on " + dayMonDateCreate + "." + "<br>" +
+              "Your order was updated on " + dayMonDateUpdate + " to order status of " + response.status + "." + "<br>" +
+              "We sent the details to email " + response.customer_email + "." + "<br>" +
+              "The Order total was: " + "$" + response.grand_total + "." + "<br>" +
+              "Thanks for you custom." + "<br>"
+            )
+          } else {
+            $(".order-details").html("<div class='error'>I'm really sorry your order details are missing.</div>");
+          }
+        });
 
-       }
-     }
+      });
+      $('#product-name').change(function() {
+        console.log("inproduct");
+        var productName = $("#product-name").val();
+        var URL = "https://ciaranquinlan.com/rest/V1/products/" + productName;
+        if (productName) {
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": URL,
+            "method": "GET",
+            //           You can call this function with a delay image
+            //           beforeSend: function() {
+            //             $(".product .loading-image").show();
+            //           },
+            "headers": {
+              "authorization": "Bearer az5t8r5a35mzbv3ssflcxfuh2g0b2ixq",
+              "cache-control": "no-cache"
+            },
+            fail: function(xhr, textStatus, errorThrown) {
 
-     $.ajax(settings).done(function(response) {
-       var desc = '';
-       var qty = '';
-       var productImage = '';
-       var productImageUrl = '';
-       console.log("full response=", response);
+              $(".product-details").html("<class='error'>Request failed, Server Down! Please try again later</div>");
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+              $(".product-details").html("<class='error'>Snap! No product found</div>");
+            }
 
-       // Find the short description in the custom attrib array    
-       jQuery.each(response.custom_attributes, function(i, val) {
-         if (val.attribute_code === 'short_description') {
-           desc = val.value;
-           console.log("val.value=", val.value);
-         }
-       });
-       // Find the image in the custom attrib array  and add https://ciaranquinlan.com/pub/media/catalog/product/
-       jQuery.each(response.custom_attributes, function(i, val) {
-         if (val.attribute_code === 'image') {
+          }
+        }
 
-           productImage = "https://ciaranquinlan.com/pub/media/catalog/product/" + val.value;
-           console.log("image=", productImage);
-         }
-       });
+        $.ajax(settings).done(function(response) {
+          var desc = '';
+          var longDesc = '';
+          var qty = '';
+          var productImage = '';
+          var productImageUrl = '';
+          console.log("full response=", response);
 
-       // Find the stock  in the extension attrib array       
-       if (response.extension_attributes.stock_item) {
-         qty = response.extension_attributes.stock_item.qty;
-       }
+          // Find the short description in the custom attrib array    
+          jQuery.each(response.custom_attributes, function(i, val) {
+            if (val.attribute_code === 'short_description') {
+              desc = val.value;
+              console.log("val.value=", val.value);
+            }
+          });
+          jQuery.each(response.custom_attributes, function(i, val) {
+            if (val.attribute_code === 'description') {
+              longDesc = val.value;
+              console.log("val.value=", longDesc);
+            }
+          });
 
-       if (response.id) {
 
-         $(".product-details").html(
-           "The product you searched for is : " + response.name +
-           "</br>" +
-           "The Product short description is : " + desc +
-           "</br>" +
-           "The Product cost is: " + '$' + response.price +
-           "</br>" +
-           "The product is in stock:" + qty +
-           "The image is is in stock:" + qty +
-           "</br>" +
-           "<img src='" + productImage + "' alt='this is the product you asked for' style='width:242px;height:242px;border:0;' >"
-         )
-       } else {
-         $(".order-details").html("<div class='error'>Something wrong - Result not found</div>");
-       }
-     });
 
-   });
+          // Find the image in the custom attrib array  and add https://ciaranquinlan.com/pub/media/catalog/product/
+          jQuery.each(response.custom_attributes, function(i, val) {
+            if (val.attribute_code === 'image') {
 
- });
-  
+              productImage = "https://ciaranquinlan.com/pub/media/catalog/product/" + val.value;
+              console.log("image=", productImage);
+            }
+          });
+
+          // Find the stock  in the extension attrib array       
+          if (response.extension_attributes.stock_item) {
+            qty = response.extension_attributes.stock_item.qty;
+          }
+
+          if (response.id) {
+
+            $(".product-details").html(
+              "The product you searched for is : " + response.name +
+              "</br>" +
+              "The Product description is : " + longDesc +
+              "</br>" +
+              "The Product cost is: " + '$' + response.price +
+              "</br>" +
+              "The product is in stock:" + qty +
+              "The image is is in stock:" + qty +
+              "</br>" +
+              "<img src='" + productImage + "' alt='this is the product you asked for' style='width:242px;height:242px;border:0;' >"
+            )
+          } else {
+            $(".order-details").html("<div class='error'>Something wrong - Result not found</div>");
+          }
+        });
+
+      });
+
+    });
   </script>
-  
-  
-  
+
+
+
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 # git init
 read -p "Adding - Press enter to add all"
 git add ./
-read -p "Enter commit message:" commit
+read -p "Enter commit message: " commit
 git commit -m "$commit"
 #git remote add origin https://github.com/ciaranq/project2.git
 read -p "Pushing - Press enter to push"
